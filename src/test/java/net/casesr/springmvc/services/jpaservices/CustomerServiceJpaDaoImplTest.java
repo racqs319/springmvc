@@ -1,4 +1,4 @@
-package net.casesr.springmvc.services;
+package net.casesr.springmvc.services.jpaservices;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,6 +13,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import net.casesr.springmvc.config.JpaIntegrationConfig;
 import net.casesr.springmvc.domain.Customer;
+import net.casesr.springmvc.domain.User;
+import net.casesr.springmvc.services.CustomerService;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {JpaIntegrationConfig.class})
@@ -32,6 +34,20 @@ public class CustomerServiceJpaDaoImplTest {
 		List<Customer> customers = (List<Customer>) customerService.listAll();
 		
 		assertEquals(3, customers.size());
+	}
+	
+	@Test
+	public void testWithUser() throws Exception {
+		Customer customer = new Customer();
+		User user = new User();
+		user.setUsername("myUsername");
+		user.setPassword("myPassword");
+		customer.setUser(user);
+		
+		Customer savedCustomer = customerService.saveOrUpdate(customer);
+		
+		assertNotNull(savedCustomer.getUser().getId());
+		assertNotNull(savedCustomer.getUser().getEncryptedPassword());
 	}
 
 }

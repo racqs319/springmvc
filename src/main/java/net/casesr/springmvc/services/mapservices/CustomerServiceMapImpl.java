@@ -1,4 +1,4 @@
-package net.casesr.springmvc.services;
+package net.casesr.springmvc.services.mapservices;
 
 import java.util.List;
 
@@ -7,10 +7,11 @@ import org.springframework.stereotype.Service;
 
 import net.casesr.springmvc.domain.Customer;
 import net.casesr.springmvc.domain.DomainObject;
+import net.casesr.springmvc.services.CustomerService;
 
 @Service
 @Profile("map")
-public class CustomerServiceImpl extends AbstractMapService implements CustomerService {
+public class CustomerServiceMapImpl extends AbstractMapService implements CustomerService {
 	
 	@Override
 	public List<DomainObject> listAll() {

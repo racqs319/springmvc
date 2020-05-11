@@ -1,4 +1,4 @@
-package net.casesr.springmvc.services;
+package net.casesr.springmvc.services.mapservices;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 
 import net.casesr.springmvc.domain.DomainObject;
 import net.casesr.springmvc.domain.Product;
+import net.casesr.springmvc.services.ProductService;
 
 @Service
 @Profile("map")
-public class ProductServiceImpl extends AbstractMapService implements ProductService {
+public class ProductServiceMapImpl extends AbstractMapService implements ProductService {
 
 	@Override
 	public List<DomainObject> listAll() {

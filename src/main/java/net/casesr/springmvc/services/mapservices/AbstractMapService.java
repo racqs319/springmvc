@@ -1,4 +1,4 @@
-package net.casesr.springmvc.services;
+package net.casesr.springmvc.services.mapservices;
 
 import java.util.ArrayList;
 import java.util.Collections;

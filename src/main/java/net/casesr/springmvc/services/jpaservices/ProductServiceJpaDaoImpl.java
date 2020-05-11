@@ -1,26 +1,18 @@
-package net.casesr.springmvc.services;
+package net.casesr.springmvc.services.jpaservices;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import net.casesr.springmvc.domain.Product;
+import net.casesr.springmvc.services.ProductService;
 
 @Service
 @Profile("jpadao")
-public class ProductServiceJpaDaoImpl implements ProductService {
-
-	private EntityManagerFactory emf;
-
-	@PersistenceUnit
-	public void setEmf(EntityManagerFactory emf) {
-		this.emf = emf;
-	}
+public class ProductServiceJpaDaoImpl extends AbstractJpaDaoService implements ProductService {
 
 	@Override
 	public List<Product> listAll() {

@@ -1,4 +1,4 @@
-package net.casesr.springmvc.services;
+package net.casesr.springmvc.services.jpaservices;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,6 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import net.casesr.springmvc.config.JpaIntegrationConfig;
 import net.casesr.springmvc.domain.Product;
+import net.casesr.springmvc.services.ProductService;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {JpaIntegrationConfig.class})
