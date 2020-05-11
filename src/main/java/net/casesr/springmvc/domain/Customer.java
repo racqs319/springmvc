@@ -1,6 +1,5 @@
 package net.casesr.springmvc.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,7 +27,7 @@ public class Customer implements DomainObject {
     private String state;
     private String zipCode;
     
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne
     private User user;
 	
     @Override
